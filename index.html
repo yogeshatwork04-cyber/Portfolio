@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yogesh | Software Engineer & AI/Systems Developer</title>
+  <meta name="description" content="Portfolio of Yogesh — Final-year B.Tech CSE (AI & ML) student at VIT Bhopal specializing in high-concurrency backend systems, real-time event-driven architectures, and AI/RAG pipelines.">
+  <meta name="keywords" content="Yogesh, Software Engineer, Backend Developer, FastAPI, Node.js, Socket.io, Gemini AI, LangChain, FAISS, PyTorch, Machine Learning, VIT Bhopal">
+  <meta name="author" content="Yogesh">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yogesh | Software Engineer & AI Systems Developer">
+  <meta property="og:description" content="Building real-time event-driven backends, intelligent RAG diagnostic assistants, and high-performance AI platforms.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Background Lighting -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand" id="nav-brand-logo">
+        <span class="brand-bracket">&lt;</span><span class="brand-name">Yogesh</span><span class="brand-cursor">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#about" class="nav-link" id="nav-link-about">About</a></li>
+        <li><a href="#skills" class="nav-link" id="nav-link-skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" id="nav-link-projects">Projects</a></li>
+        <li><a href="#profiles" class="nav-link" id="nav-link-profiles">Competitive</a></li>
+        <li><a href="#education" class="nav-link" id="nav-link-education">Education</a></li>
+      </ul>
+
+      <div class="nav-cta-group">
+        <a href="#contact" class="btn btn-sm btn-primary" id="nav-btn-contact">Get in Touch</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="section hero-section" id="hero">
+      <div class="container hero-container">
+        <!-- Top Status Pill -->
+        <div class="status-pill" id="hero-status-pill">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for Software & AI Engineering Roles</span>
+        </div>
+
+        <!-- Main Title & Tagline -->
+        <h1 class="hero-title" id="hero-main-title">
+          Engineering High-Performance <br>
+          <span class="gradient-text">Real-Time Systems & AI Platforms</span>
+        </h1>
+
+        <p class="hero-description" id="hero-bio-summary">
+          Hi, I'm <strong class="highlight-text">Yogesh</strong>. Final-year Computer Science (AI & ML) student at 
+          <span class="text-accent">VIT Bhopal</span> (CGPA 8.31). I engineer low-latency event-driven backends and 
+          intelligent RAG diagnostic assistants with Python, C++, and Docker.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions" id="hero-cta-buttons">
+          <a href="#projects" class="btn btn-primary" id="btn-explore-projects">
+            <span>Explore Projects</span>
+            <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://github.com/yogeshatwork04-cyber" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-hero-github">
+            <svg class="icon-social" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub Profile</span>
+          </a>
+          <a href="https://www.linkedin.com/in/yogesh-620053272/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-hero-linkedin">
+            <svg class="icon-social" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <!-- Telemetry Stats Strip -->
+        <div class="hero-stats-grid" id="hero-stats-metrics">
+          <div class="stat-card">
+            <div class="stat-number" id="stat-dsa-count">350+</div>
+            <div class="stat-label">DSA Problems Solved</div>
+            <div class="stat-sub">Algorithmic Problem Solving</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="stat-codechef-rating">1503</div>
+            <div class="stat-label">CodeChef Rating</div>
+            <div class="stat-sub">Competitive Programming</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="stat-latency-drop">45%</div>
+            <div class="stat-label">Visual Latency Drop</div>
+            <div class="stat-sub">In Real-Time Event Sync</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="stat-cgpa">8.31</div>
+            <div class="stat-label">VIT Bhopal CGPA</div>
+            <div class="stat-sub">B.Tech CSE (AI & ML)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Terminal / Architecture Snippet Section -->
+    <section class="section terminal-section" id="about">
+      <div class="container">
+        <div class="terminal-window" id="interactive-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title">yogesh@engineer-node: ~/profile</div>
+            <div class="terminal-badge">STABLE (B.Tech 2023–2027)</div>
+          </div>
+          <div class="terminal-body">
+            <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">cat profile.json</span></p>
+            <pre class="term-code"><code>{
+  <span class="code-key">"name"</span>: <span class="code-str">"Yogesh"</span>,
+  <span class="code-key">"role"</span>: <span class="code-str">"Software Engineer (AI/ML & Distributed Backends)"</span>,
+  <span class="code-key">"location"</span>: <span class="code-str">"Gurugram, Haryana"</span>,
+  <span class="code-key">"institution"</span>: <span class="code-str">"Vellore Institute of Technology, Bhopal"</span>,
+  <span class="code-key">"focusAreas"</span>: [
+    <span class="code-str">"Real-Time Event-Driven Systems"</span>,
+    <span class="code-str">"RAG Architectures & Vector Search"</span>,
+    <span class="code-str">"High-Concurrency REST & WebSockets"</span>
+  ],
+  <span class="code-key">"verifiedAchievements"</span>: {
+    <span class="code-key">"codeChefRating"</span>: <span class="code-num">1503</span>,
+    <span class="code-key">"dsaProblems"</span>: <span class="code-str">"350+ Across Platforms"</span>,
+    <span class="code-key">"codolio"</span>: <span class="code-str">"cry_cow"</span>
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">PORTFOLIO WORK</span>
+          <h2 class="section-title">Engineered For Performance & Scale</h2>
+          <p class="section-subtitle">A showcase of production-ready systems, real-time sync engines, and AI diagnostic platforms.</p>
+        </div>
+
+        <div class="projects-grid" id="projects-container">
+
+          <!-- Project 1: SyncDraw -->
+          <article class="project-card" id="project-syncdraw">
+            <div class="card-glow"></div>
+            <div class="project-card-header">
+              <div class="project-category-badge">Real-Time Event Architecture</div>
+              <div class="project-links">
+                <a href="https://sync-draw-eight.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-badge" id="syncdraw-live-link" title="Open Live SyncDraw">
+                  <span>Live App</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">SyncDraw — Real-Time Collaborative Whiteboard</h3>
+            <p class="project-description">
+              Engineered an event-driven collaborative canvas supporting 10+ concurrent users per room with bidirectional stroke streaming and deterministic conflict resolution.
+            </p>
+
+            <div class="project-metrics-box">
+              <div class="metric-item">
+                <span class="metric-val">45%</span>
+                <span class="metric-desc">Visual Latency Cut</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">100%</span>
+                <span class="metric-desc">Canvas Parity</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">&lt; 2s</span>
+                <span class="metric-desc">Replay Rebuild</span>
+              </div>
+            </div>
+
+            <ul class="project-bullet-list">
+              <li>Secured connections using Google OAuth 2.0 & JWT validation directly at the Socket.io handshake layer.</li>
+              <li>Engineered stroke-history replay buffer so late-joining clients reconstruct full canvas states within 2 seconds.</li>
+              <li>Containerized with Docker Compose for seamless single-command local testing and multi-client orchestration.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Socket.io</span>
+              <span class="tech-tag">HTML5 Canvas</span>
+              <span class="tech-tag">Google OAuth</span>
+              <span class="tech-tag">JWT</span>
+              <span class="tech-tag">Docker Compose</span>
+            </div>
+          </article>
+
+          <!-- Project 2: CodeLens AI -->
+          <article class="project-card" id="project-codelens">
+            <div class="card-glow"></div>
+            <div class="project-card-header">
+              <div class="project-category-badge">AI Developer Tool & GenAI</div>
+              <div class="project-links">
+                <a href="https://codelens-ai-ixqc.onrender.com/" target="_blank" rel="noopener noreferrer" class="link-badge" id="codelens-live-link" title="Open CodeLens Live">
+                  <span>Live App</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                </a>
+                <a href="https://github.com/anshullakra007/codelens-ai" target="_blank" rel="noopener noreferrer" class="link-badge link-badge-outline" id="codelens-repo-link" title="View Source Code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Code</span>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">CodeLens AI — Automated Code Review Agent</h3>
+            <p class="project-description">
+              Hyper-optimized code review agent powered by Google Gemini 3.5 Flash that audits snippets for time/space complexity bottlenecks, catches logic vulnerabilities, and generates clean rewrites.
+            </p>
+
+            <div class="project-metrics-box">
+              <div class="metric-item">
+                <span class="metric-val">Big-O</span>
+                <span class="metric-desc">Instant Complexity</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">Multi-Lang</span>
+                <span class="metric-desc">Py / C++ / Java</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">Docker</span>
+                <span class="metric-desc">Render Hosted</span>
+              </div>
+            </div>
+
+            <ul class="project-bullet-list">
+              <li>Integrated Google Gemini 3.5 Flash via `google-genai` SDK for ultra-fast, deterministic code analysis.</li>
+              <li>Automated multi-language benchmarking suite identifying O(N²) loops, buffer overflows, SQL injections, and stylistic flaws.</li>
+              <li>Unified architecture serving responsive UI directly from FastAPI, fully containerized with Docker.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Python 3</span>
+              <span class="tech-tag">Gemini 3.5 Flash</span>
+              <span class="tech-tag">GenAI</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Render</span>
+              <span class="tech-tag">AST / Benchmarking</span>
+            </div>
+          </article>
+
+          <!-- Project 3: Daddy's Garage -->
+          <article class="project-card" id="project-daddysgarage">
+            <div class="card-glow"></div>
+            <div class="project-card-header">
+              <div class="project-category-badge">Full-Stack & RAG Vector Search</div>
+              <div class="project-links">
+                <span class="badge-status-neutral">Full-Stack System</span>
+              </div>
+            </div>
+
+            <h3 class="project-title">Daddy’s Garage — AI Garage Management Platform</h3>
+            <p class="project-description">
+              Modular full-stack platform with role-based access control (Customer, Mechanic, Admin) and an integrated RAG diagnostic copilot powered by FAISS vector indexing.
+            </p>
+
+            <div class="project-metrics-box">
+              <div class="metric-item">
+                <span class="metric-val">70%</span>
+                <span class="metric-desc">Manual Lookup Cut</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">15+</span>
+                <span class="metric-desc">REST Endpoints</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">&lt; 5m</span>
+                <span class="metric-desc">Fresh Clone Setup</span>
+              </div>
+            </div>
+
+            <ul class="project-bullet-list">
+              <li>Built RAG diagnostic pipeline ingesting technical vehicle manuals into a FAISS vector store with Gemini API integration.</li>
+              <li>Developed FastAPI backend with SQLAlchemy ORM, automated database seeding, and auto-generated Swagger API docs.</li>
+              <li>Crafted modular dashboards with severity-scored symptom diagnostics and strict RBAC authorization.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">FAISS</span>
+              <span class="tech-tag">Gemini API</span>
+              <span class="tech-tag">SQLAlchemy</span>
+              <span class="tech-tag">React</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix Section -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">TECHNICAL CAPABILITIES</span>
+          <h2 class="section-title">Skills & Engineering Stack</h2>
+          <p class="section-subtitle">Extensive experience across systems programming, low-latency backends, and modern AI/Data pipelines.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs" id="skill-filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Disciplines</button>
+          <button class="filter-tab" data-filter="backend">Backend & Real-Time</button>
+          <button class="filter-tab" data-filter="ai-ds">AI, Data Science & GenAI</button>
+          <button class="filter-tab" data-filter="core-systems">Languages & Core CS</button>
+          <button class="filter-tab" data-filter="devops">DevOps & Tooling</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid-container">
+
+          <!-- Card 1: Programming Languages -->
+          <div class="skill-category-card" data-category="core-systems">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">⚡</div>
+              <h3 class="skill-cat-title">Programming Languages</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip">C++</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Backend & Distributed APIs -->
+          <div class="skill-category-card" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">🌐</div>
+              <h3 class="skill-cat-title">Backend & Real-Time Systems</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip">FastAPI (Python)</span>
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">Socket.io (WebSockets)</span>
+              <span class="skill-chip">RESTful API Design</span>
+              <span class="skill-chip">SQLAlchemy ORM</span>
+              <span class="skill-chip">JWT & Google OAuth 2.0</span>
+              <span class="skill-chip">MySQL Database</span>
+            </div>
+          </div>
+
+          <!-- Card 3: AI, Data Science & GenAI -->
+          <div class="skill-category-card" data-category="ai-ds">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">🧠</div>
+              <h3 class="skill-cat-title">AI, Data Science & GenAI</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip highlight-chip">GenAI (Active Focus)</span>
+              <span class="skill-chip">PyTorch & Machine Learning</span>
+              <span class="skill-chip">Data Preprocessing</span>
+              <span class="skill-chip">NumPy & Pandas</span>
+              <span class="skill-chip">Matplotlib</span>
+              <span class="skill-chip">LangChain & FAISS (Vector Stores)</span>
+              <span class="skill-chip">Google Gemini API (RAG Pipelines)</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Core Computer Science -->
+          <div class="skill-category-card" data-category="core-systems">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">⚙️</div>
+              <h3 class="skill-cat-title">Computer Science Foundations</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip">Data Structures & Algorithms</span>
+              <span class="skill-chip">Object-Oriented Programming (OOP)</span>
+              <span class="skill-chip">Operating Systems (OS)</span>
+              <span class="skill-chip">Computer Networks</span>
+              <span class="skill-chip">DBMS Architecture</span>
+              <span class="skill-chip">Competitive Programming</span>
+            </div>
+          </div>
+
+          <!-- Card 5: DevOps & Engineering Practices -->
+          <div class="skill-category-card" data-category="devops">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">📦</div>
+              <h3 class="skill-cat-title">DevOps & SDLC Tooling</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Docker Compose</span>
+              <span class="skill-chip">Git & GitHub</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Frontend Interface -->
+          <div class="skill-category-card" data-category="backend">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap">🖥️</div>
+              <h3 class="skill-cat-title">Frontend & Interfaces</h3>
+            </div>
+            <div class="skill-chips">
+              <span class="skill-chip">React.js</span>
+              <span class="skill-chip">HTML5 Canvas (Collaborative UI)</span>
+              <span class="skill-chip">Modern CSS & Glassmorphism</span>
+              <span class="skill-chip">Event Listeners & State Sync</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Competitive Programming & Profiles Section -->
+    <section class="section profiles-section" id="profiles">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">VERIFIED COMPETENCY</span>
+          <h2 class="section-title">Coding Profiles & Competitive Ranks</h2>
+          <p class="section-subtitle">Consistent problem solver with a rigorous foundation in algorithms and analytical thinking.</p>
+        </div>
+
+        <div class="profiles-grid" id="coding-profiles-container">
+
+          <!-- Codolio Card -->
+          <a href="https://codolio.com/profile/cry_cow" target="_blank" rel="noopener noreferrer" class="profile-card" id="card-codolio">
+            <div class="profile-card-top">
+              <div class="profile-icon-title">
+                <span class="profile-platform-badge">CODOLIO DASHBOARD</span>
+                <h3 class="profile-name">cry_cow</h3>
+              </div>
+              <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <p class="profile-desc">Comprehensive unified view of coding contest trajectory, submission consistency, and algorithmic problem badges.</p>
+            <div class="profile-stat-footer">
+              <span class="stat-tag">Verified Profile</span>
+              <span class="stat-highlight">350+ Total Problems</span>
+            </div>
+          </a>
+
+          <!-- CodeChef Card -->
+          <a href="https://www.codechef.com/users/yogesh_kumar65" target="_blank" rel="noopener noreferrer" class="profile-card" id="card-codechef">
+            <div class="profile-card-top">
+              <div class="profile-icon-title">
+                <span class="profile-platform-badge">CODECHEF</span>
+                <h3 class="profile-name">yogesh_kumar65</h3>
+              </div>
+              <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <p class="profile-desc">Competitive rating achieved through regular rated division contests, practicing greedy algorithms, dynamic programming, and graphs.</p>
+            <div class="profile-stat-footer">
+              <span class="stat-tag">Rating</span>
+              <span class="stat-highlight">1503 Peak</span>
+            </div>
+          </a>
+
+          <!-- GitHub Card -->
+          <a href="https://github.com/yogeshatwork04-cyber" target="_blank" rel="noopener noreferrer" class="profile-card" id="card-github">
+            <div class="profile-card-top">
+              <div class="profile-icon-title">
+                <span class="profile-platform-badge">GITHUB</span>
+                <h3 class="profile-name">yogeshatwork04-cyber</h3>
+              </div>
+              <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <p class="profile-desc">Repositories containing event-driven server backends, microservice configurations, Docker orchestrations, and full-stack platforms.</p>
+            <div class="profile-stat-footer">
+              <span class="stat-tag">Open Source</span>
+              <span class="stat-highlight">Production Repos</span>
+            </div>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a href="https://www.linkedin.com/in/yogesh-620053272/" target="_blank" rel="noopener noreferrer" class="profile-card" id="card-linkedin">
+            <div class="profile-card-top">
+              <div class="profile-icon-title">
+                <span class="profile-platform-badge">LINKEDIN</span>
+                <h3 class="profile-name">yogesh-620053272</h3>
+              </div>
+              <svg class="profile-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <p class="profile-desc">Connect for software engineering roles, real-time distributed systems, and AI engineering.</p>
+            <div class="profile-stat-footer">
+              <span class="stat-tag">Network</span>
+              <span class="stat-highlight">Open to Connect</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Academic Foundation Section -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">ACADEMIC FOUNDATION</span>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Strong mathematical, algorithmic, and machine learning grounding from one of India's premier tech institutes.</p>
+        </div>
+
+        <div class="timeline" id="education-timeline">
+          <!-- Item 1: VIT Bhopal -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-degree">Bachelor of Technology — Computer Science & Engineering (AI & ML)</h3>
+                  <div class="timeline-school">Vellore Institute of Technology (VIT), Bhopal</div>
+                </div>
+                <div class="timeline-badge-date">Sep 2023 – June 2027</div>
+              </div>
+              <div class="timeline-meta">
+                <span class="meta-pill"><strong>CGPA:</strong> 8.31 / 10.0</span>
+                <span class="meta-pill">Specialization: Artificial Intelligence & Machine Learning</span>
+              </div>
+              <p class="timeline-desc">
+                Coursework covering Advanced Data Structures, Operating Systems, Database Management Systems, Computer Networks, Machine Learning Foundations, Linear Algebra, and Distributed Systems.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Schooling -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-degree">Senior Secondary & High School (Science Stream)</h3>
+                  <div class="timeline-school">M R M Public Sr. Sec. School, Jhajjar (Haryana)</div>
+                </div>
+                <div class="timeline-badge-date">Graduated</div>
+              </div>
+              <div class="timeline-meta">
+                <span class="meta-pill"><strong>Class XII:</strong> 81.4%</span>
+                <span class="meta-pill"><strong>Class X:</strong> 96.0%</span>
+              </div>
+              <p class="timeline-desc">
+                Strong focus on Mathematics, Physics, and Computer Science fundamentals, establishing a solid foundation for competitive algorithmic programming.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Contact & Footer Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">GET IN TOUCH</span>
+          <h2 class="section-title">Let's Connect & Build Together</h2>
+          <p class="section-subtitle">Currently exploring Software Engineer, Backend, and AI Platform opportunities. Feel free to reach out directly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Details -->
+          <div class="contact-details-card">
+            <h3 class="contact-card-title">Direct Contact Channels</h3>
+            
+            <div class="contact-channel" id="channel-email">
+              <div class="channel-icon">✉️</div>
+              <div class="channel-info">
+                <div class="channel-label">Email Address</div>
+                <div class="channel-value" id="email-text">yogeshatwork04@gmail.com</div>
+              </div>
+              <button class="btn-copy" id="btn-copy-email" title="Copy email to clipboard">
+                <span id="copy-btn-text">Copy</span>
+              </button>
+            </div>
+
+            <div class="contact-channel" id="channel-phone">
+              <div class="channel-icon">📞</div>
+              <div class="channel-info">
+                <div class="channel-label">Phone & WhatsApp</div>
+                <a href="tel:+918307919844" class="channel-value link-plain">+91 83079 19844</a>
+              </div>
+            </div>
+
+            <div class="contact-channel" id="channel-location">
+              <div class="channel-icon">📍</div>
+              <div class="channel-info">
+                <div class="channel-label">Location</div>
+                <div class="channel-value">Gurugram, Haryana, India (Open to Relocation & Remote)</div>
+              </div>
+            </div>
+
+            <div class="social-links-row">
+              <a href="https://github.com/yogeshatwork04-cyber" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/yogesh-620053272/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="https://codolio.com/profile/cry_cow" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Codolio">
+                <span class="icon-label-c">C</span>
+              </a>
+              <a href="https://www.codechef.com/users/yogesh_kumar65" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="CodeChef">
+                <span class="icon-label-c">CC</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Message Box -->
+          <div class="contact-form-card">
+            <h3 class="contact-card-title">Send a Quick Message</h3>
+            <form id="contact-form" action="https://formsubmit.co/yogeshatwork04@gmail.com" method="POST">
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New message from Portfolio visitor!">
+
+              <div class="form-group">
+                <label for="form-name">Your Name</label>
+                <input type="text" id="form-name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Your Email</label>
+                <input type="email" id="form-email" name="email" placeholder="your.email@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" name="message" rows="4" placeholder="Hi Yogesh, I came across your portfolio and would love to discuss..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" id="btn-submit-message">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+              <div class="form-feedback" id="form-feedback-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">&lt;Yogesh/&gt;</span>
+        <span class="footer-text">© 2026 Yogesh • Constantly learning, building systems, and solving algorithms.</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" id="btn-back-to-top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
