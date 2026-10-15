@@ -1,55 +1,58 @@
 /**
- * YOGESH PORTFOLIO — INTERACTIVE LOGIC
- * Dynamic filtering, copy to clipboard, mobile menu, and active scroll spy
+ * YOGESH PORTFOLIO — SERENE MINIMALIST INTERACTIVITY
+ * Light/Dark theme toggle, floating nav active states, contact modal, and FormSubmit AJAX delivery
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initSkillFilters();
-  initEmailCopy();
-  initContactForm();
-  initSmoothScroll();
+  initThemeToggle();
+  initNavigation();
+  initContactModal();
+  initFormSubmit();
 });
 
 /* --------------------------------------------------------------------------
- * 1. Mobile Menu & Scroll Spy
+ * 1. Light / Dark Theme Toggle
  * -------------------------------------------------------------------------- */
-function initNavbar() {
-  const toggleBtn = document.getElementById('mobile-toggle-btn');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle-btn');
+  const root = document.documentElement;
 
-  // Toggle mobile drawer
-  if (toggleBtn && navMenu) {
+  // Load saved preference or default to light (as shown in reference screenshot)
+  const savedTheme = localStorage.getItem('theme-preference') || 'light';
+  root.setAttribute('data-theme', savedTheme);
+
+  if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    // Close on link click
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-      });
+      const currentTheme = root.getAttribute('data-theme') || 'light';
+      const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme-preference', nextTheme);
     });
   }
+}
 
-  // Scroll Spy for active navigation highlight
+/* --------------------------------------------------------------------------
+ * 2. Floating Pill Navigation Scroll Spy
+ * -------------------------------------------------------------------------- */
+function initNavigation() {
+  const navLinks = document.querySelectorAll('.nav-pill-link');
+  const sections = document.querySelectorAll('section[id]');
+
   window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPosition = window.pageYOffset + 120;
+    let currentId = 'home';
+    const scrollPos = window.pageYOffset + 180;
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentId = sec.getAttribute('id');
       }
     });
 
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
+      if (link.getAttribute('href') === `#${currentId}`) {
         link.classList.add('active');
       }
     });
@@ -57,89 +60,55 @@ function initNavbar() {
 }
 
 /* --------------------------------------------------------------------------
- * 2. Interactive Skills Category Filter
+ * 3. Contact Modal Open / Close Logic
  * -------------------------------------------------------------------------- */
-function initSkillFilters() {
-  const filterTabs = document.querySelectorAll('.filter-tab');
-  const skillCards = document.querySelectorAll('.skill-category-card');
+function initContactModal() {
+  const modal = document.getElementById('contact-modal');
+  const openHeroBtn = document.getElementById('btn-hero-contact');
+  const openConnectBtn = document.getElementById('btn-connect-open');
+  const closeBtn = document.getElementById('modal-close-btn');
 
-  if (!filterTabs.length || !skillCards.length) return;
-
-  filterTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Toggle active tab style
-      filterTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const filterValue = tab.getAttribute('data-filter');
-
-      skillCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          card.style.display = 'block';
-          card.style.opacity = '0';
-          setTimeout(() => {
-            card.style.transition = 'opacity 0.25s ease-in-out';
-            card.style.opacity = '1';
-          }, 10);
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-}
-
-/* --------------------------------------------------------------------------
- * 3. Copy Email to Clipboard with Tooltip Feedback
- * -------------------------------------------------------------------------- */
-function initEmailCopy() {
-  const copyBtn = document.getElementById('btn-copy-email');
-  const copyBtnText = document.getElementById('copy-btn-text');
-  const emailTextEl = document.getElementById('email-text');
-
-  if (!copyBtn || !emailTextEl) return;
-
-  copyBtn.addEventListener('click', async () => {
-    const email = emailTextEl.textContent.trim();
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(email);
-      } else {
-        // Fallback for non-https / file protocol
-        const textArea = document.createElement('textarea');
-        textArea.value = email;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        document.execCommand('copy');
-        textArea.remove();
-      }
-
-      // Visual feedback
-      copyBtnText.textContent = 'Copied!';
-      copyBtn.style.background = 'rgba(16, 185, 129, 0.2)';
-      copyBtn.style.borderColor = 'rgba(16, 185, 129, 0.5)';
-      copyBtn.style.color = '#34d399';
-
-      setTimeout(() => {
-        copyBtnText.textContent = 'Copy';
-        copyBtn.style.background = '';
-        copyBtn.style.borderColor = '';
-        copyBtn.style.color = '';
-      }, 2000);
-    } catch (err) {
-      console.error('Failed to copy: ', err);
+  function openModal() {
+    if (modal) {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const nameInput = document.getElementById('form-name');
+      if (nameInput) nameInput.focus();
     }
-  });
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (openHeroBtn) openHeroBtn.addEventListener('click', openModal);
+  if (openConnectBtn) openConnectBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  }
 }
 
 /* --------------------------------------------------------------------------
- * 4. Contact Form — Live Delivery to yogeshatwork04@gmail.com via FormSubmit
+ * 4. FormSubmit AJAX Delivery to yogeshatwork04@gmail.com
  * -------------------------------------------------------------------------- */
-function initContactForm() {
+function initFormSubmit() {
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback-msg');
   const submitBtn = document.getElementById('btn-submit-message');
@@ -157,7 +126,7 @@ function initContactForm() {
 
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span>Sending...</span>';
-    feedback.className = 'form-feedback';
+    feedback.className = 'form-status-msg';
     feedback.style.display = 'none';
 
     try {
@@ -181,47 +150,35 @@ function initContactForm() {
         form.reset();
         submitBtn.innerHTML = `
           <span>Message Sent!</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
         `;
 
-        feedback.className = 'form-feedback success';
-        feedback.style.display = 'block';
-        feedback.style.color = '#34d399';
-        feedback.textContent = `Thank you, ${name}! Your message has been sent to Yogesh's inbox.`;
+        feedback.className = 'form-status-msg success';
+        feedback.textContent = `Thank you, ${name}! Your note has been delivered to Yogesh's inbox.`;
+
+        setTimeout(() => {
+          const modal = document.getElementById('contact-modal');
+          if (modal) {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        }, 3000);
       } else {
         throw new Error(data.message || 'Submission failed');
       }
     } catch (err) {
-      console.error('Contact form submission error:', err);
-      submitBtn.innerHTML = `<span>Error Sending</span>`;
-      feedback.className = 'form-feedback error';
-      feedback.style.display = 'block';
-      feedback.style.color = '#ef4444';
+      console.error('Contact error:', err);
+      submitBtn.innerHTML = `<span>Try Again</span>`;
+      feedback.className = 'form-status-msg error';
       feedback.textContent = 'Failed to send message. Please email directly at yogeshatwork04@gmail.com.';
     } finally {
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = `
           <span>Send Message</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
         `;
       }, 5000);
     }
   });
-}
-
-/* --------------------------------------------------------------------------
- * 5. Smooth Scroll Helper
- * -------------------------------------------------------------------------- */
-function initSmoothScroll() {
-  const backToTopBtn = document.getElementById('btn-back-to-top');
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
 }
